@@ -1,0 +1,31 @@
+<div class="container mx-auto mt-2 flex flex-col lg:flex-row justify-center">
+  <div class="lg:mr-10">
+    <%= image_tag("https://image.tmdb.org/t/p/w300#{@movie['poster_path']}", alt: @movie['title'], class: "mb-4") %>
+  </div>
+  <div class="lg:w-1/2">
+    <h1 class="text-3xl font-bold mb-4"><%= @movie['title'] %></h1>
+    <p class="text-lg"><strong>Original Title:</strong> <%= @movie['original_title'] %></p>
+    <p class="text-lg"><strong>Release Date:</strong> <%= @movie['release_date'] %></p>
+    
+    <p class="text-lg"><strong>Popularity:</strong> <%= @movie['popularity'] %></p>
+    <p class="text-lg mt-8"><strong>Description:   </strong> <%= @movie['overview'] %></p>
+  </div>
+</div>
+<div>
+  
+
+        <%if current_user%>
+        <%= simple_form_for Comment.new, url: post_comments_path(@post), method: :post do |f| %>
+          <%= f.input :description, label: 'Comment', placeholder: 'Add a comment', label_html: {class: 'mt-4'}, input_html: {class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-50 dark:border-gray-600 dark:placeholder-gray-500 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"} %>
+          <%= f.submit 'Post' %>
+        <% end %>
+
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>
+
+
+</div>
