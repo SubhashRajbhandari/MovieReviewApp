@@ -1,5 +1,5 @@
 require "active_support/core_ext/integer/time"
-ENV['TMDB_API_KEY'] = 'b2f86204db3b97208a886a1ddb51195d'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
