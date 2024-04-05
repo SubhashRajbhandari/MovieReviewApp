@@ -16,6 +16,7 @@ module Tmdb
 
       response = get_request(url: url)
       parsed_response = JSON.parse(response.body)
+      
       parsed_response
     end
   end
